@@ -34,6 +34,7 @@ namespace BowlingLeague.Infrastructure
         public string PageClassNormal { get; set; }
         public string PageClassSelected { get; set; }
 
+        //Overriding in order to implement tag helpers
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             IUrlHelper urlHelp = urlInfo.GetUrlHelper(ViewContext);
@@ -47,6 +48,7 @@ namespace BowlingLeague.Infrastructure
                 KeyValuePairs["pageNum"] = i;
                 individualTag.Attributes["href"] = urlHelp.Action("Index", KeyValuePairs);
 
+                //Add selected button class if needed
                 if (PageClassesEnabled)
                 {
                     individualTag.AddCssClass(PageClass);

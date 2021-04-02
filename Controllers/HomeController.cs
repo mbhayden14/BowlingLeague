@@ -28,6 +28,7 @@ namespace BowlingLeague.Controllers
 
             return View(new IndexViewModel
             {
+                //Obtain project and paging info needed for view
                 Bowlers = (context.Bowlers
                 .Where(t => t.TeamId == teamid || teamid == null)
                 .OrderBy(t => t.BowlerFirstName)

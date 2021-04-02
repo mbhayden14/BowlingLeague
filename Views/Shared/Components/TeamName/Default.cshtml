@@ -1,9 +1,10 @@
 ﻿@model IEnumerable<Teams>
 
+<!--Add home button at top-->
 <a class="btn btn-block btn-outline-secondary" asp-action="Index" asp-controller="Home" asp-route-teamid="" asp-route-pageNum="1">Home</a>
 <br />
 
-
+<!--Add team name buttons on left side panel-->
 @foreach (var x in Model)
 {
     <a class="btn btn-block @(x.TeamId.ToString() == ViewBag.SelectedTeam ? "btn-primary" : "btn-outline-secondary")"
